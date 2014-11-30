@@ -34,7 +34,6 @@ minetest.register_node("default:nyancat", {
 	groups = {cracky=2},
 	legacy_facedir_simple = true,
 	is_ground_content = false,
-	sounds = default.node_sound_defaults(),
 })
 
 minetest.register_node("default:nyancat_rainbow", {
@@ -43,7 +42,6 @@ minetest.register_node("default:nyancat_rainbow", {
 	inventory_image = "default_nc_rb.png",
 	is_ground_content = false,
 	groups = {cracky=2},
-	sounds = default.node_sound_defaults(),
 })
 
 minetest.register_alias("mapgen_air", "air")
