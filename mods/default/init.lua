@@ -11,13 +11,13 @@ minetest.register_item(":", {
 		max_drop_level = 0,
 		groupcaps = {
 			fleshy = {times={[1]=0.05, [2]=0.05, [3]=0.05}, uses=0, maxlevel=4},
-			crumbly = {times={{[1]=0.05, [2]=0.05, [3]=0.05}, uses=0, maxlevel=4},
+			crumbly = {times={[1]=0.05, [2]=0.05, [3]=0.05}, uses=0, maxlevel=4},
 			snappy = {times={[1]=0.05, [2]=0.05, [3]=0.05}, uses=0, maxlevel=4},
 			cracky = {times={[1]=0.05, [2]=0.05, [3]=0.05}, uses=0, maxlevel=4},
 			oddly_breakable_by_hand = {times={[1]=0.05,[2]=0.05,[3]=0.05}, uses=0, maxlevel=4},
+			}
 		}
-	}
-})
+}),
 
 minetest.register_node("default:dirt_with_grass", {
 	description = "Dirt with grass",
