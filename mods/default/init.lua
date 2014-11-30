@@ -18,31 +18,6 @@ minetest.register_item(":", {
 	}
 })
 
-minetest.register_node("default:stone", {
-	description = "Stone",
-	tiles ={"default_stone.png"},
-	groups = {cracky=3},
-	drop = 'default:cobble',
-	legacy_mineral = true,
-	sounds = default.node_sound_stone_defaults(),
-})
---[[
-minetest.register_node("default:stone_with_coal", {
-	description = "Stone with coal",
-	tiles ={"default_stone.png^default_mineral_coal.png"},
-	groups = {cracky=3},
-	drop = 'default:coal_lump',
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:stone_with_iron", {
-	description = "Stone with iron",
-	tiles ={"default_stone.png^default_mineral_iron.png"},
-	groups = {cracky=3},
-	drop = 'default:iron_lump',
-	sounds = default.node_sound_stone_defaults(),
-})
-]]
 minetest.register_node("default:dirt_with_grass", {
 	description = "Dirt with grass",
 	tiles ={"default_grass.png", "default_dirt.png", "default_dirt.png^default_grass_side.png"},
