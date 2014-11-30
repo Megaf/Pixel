@@ -10,11 +10,11 @@ minetest.register_item(":", {
 		full_punch_interval = 1.0,
 		max_drop_level = 0,
 		groupcaps = {
-			fleshy = {times=0, uses=0, maxlevel=4},
-			crumbly = {times=0, uses=0, maxlevel=4},
-			snappy = {times=0, uses=0, maxlevel=4},
-			cracy = {times=0, uses=0, maxlevel=4},
-			oddly_breakable_by_hand = {times={[1]=7.00,[2]=4.00,[3]=1.40}, uses=0, maxlevel=3},
+			fleshy = {times={[1]=0.05, [2]=0.05, [3]=0.05}, uses=0, maxlevel=4},
+			crumbly = {times={{[1]=0.05, [2]=0.05, [3]=0.05}, uses=0, maxlevel=4},
+			snappy = {times={[1]=0.05, [2]=0.05, [3]=0.05}, uses=0, maxlevel=4},
+			cracky = {times={[1]=0.05, [2]=0.05, [3]=0.05}, uses=0, maxlevel=4},
+			oddly_breakable_by_hand = {times={[1]=0.05,[2]=0.05,[3]=0.05}, uses=0, maxlevel=4},
 		}
 	}
 })
