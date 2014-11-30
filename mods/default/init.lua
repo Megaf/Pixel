@@ -10,9 +10,10 @@ minetest.register_item(":", {
 		full_punch_interval = 1.0,
 		max_drop_level = 0,
 		groupcaps = {
-			fleshy = {times={[2]=2.00, [3]=1.00}, uses=0, maxlevel=1},
-			crumbly = {times={[2]=3.00, [3]=0.70}, uses=0, maxlevel=1},
-			snappy = {times={[3]=0.40}, uses=0, maxlevel=1},
+			fleshy = {times=0, uses=0, maxlevel=4},
+			crumbly = {times=0, uses=0, maxlevel=4},
+			snappy = {times=0, uses=0, maxlevel=4},
+			cracy = {times=0, uses=0, maxlevel=4},
 			oddly_breakable_by_hand = {times={[1]=7.00,[2]=4.00,[3]=1.40}, uses=0, maxlevel=3},
 		}
 	}
@@ -22,7 +23,7 @@ minetest.register_node("default:dirt_with_grass", {
 	description = "Dirt with grass",
 	tiles ={"default_grass.png", "default_dirt.png", "default_dirt.png^default_grass_side.png"},
 	groups = {crumbly=3, soil=1},
-	drop = 'default:dirt',
+	drop = 'default:dirt_with_grass',
 	})
 
 minetest.register_node("default:nyancat", {
