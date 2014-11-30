@@ -2,6 +2,10 @@ default = {}
 
 	print("HELLO WORLD")
 
+minetest.register_on_newplayer(function(player)
+	player:get_inventory():add_item('main', 'default:dirt_with_grass 10000')
+end)
+
 minetest.register_item(":", {
 	type = "none",
 	wield_image = "wieldhand.png",
@@ -53,8 +57,10 @@ minetest.register_alias("mapgen_cobble", "default:dirt_with_grass")
 minetest.register_alias("mapgen_dirt_with_grass", "default:dirt_with_grass")
 minetest.register_alias("mapgen_stone", "default:dirt_with_grass")
 minetest.register_alias("mapgen_dirt", "default:dirt_with_grass")
+
 local homes_file = minetest.get_worldpath() .. "/homes"
 local homepos = {}
+
 local function loadhomes()
 	local input = io.open(homes_file, "r")
 	if input then
@@ -73,8 +79,10 @@ local function loadhomes()
 		homepos = {}
 	end
 end
+
 loadhomes()
 local changed = false
+
 minetest.register_chatcommand("home", {
 	description = "Type /home to teleport yourself to your land.",
 	privs = {interact=true},
@@ -91,6 +99,7 @@ minetest.register_chatcommand("home", {
 		end
 	end,
 })
+
 minetest.register_chatcommand("sethome", {
 		description = "Type /sethome to save the place where you are, allowing you to teleport back to it later on.",
 		privs = {interact=true},
