@@ -48,8 +48,7 @@ minetest.register_node("default:dirt_with_grass", {
 	tiles ={"default_grass.png", "default_dirt.png", "default_dirt.png^default_grass_side.png"},
 	groups = {crumbly=3, soil=1},
 	drop = 'default:dirt',
-	}),
-})
+	})
 
 minetest.register_node("default:nyancat", {
 	description = "Nyancat",
