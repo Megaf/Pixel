@@ -1,37 +1,20 @@
 default = {}
 
 	print("HELLO WORLD")
---[[
+
 minetest.register_on_newplayer(function(player)
-	player:get_inventory():add_item('main', 'default:dirt_with_grass 10000')
-end) ]]
-
-local pixelsgive = {}
-local pixelsgive.colors = {
-	{"white",},
-	{"grey",},
-	{"black",},
-	{"red",},
-	{"yellow",},
-	{"green",},
-	{"cyan",},
-	{"blue",},
-	{"magenta",},
-	{"orange",},
-	{"violet",},
-	{"brown",},
-	{"pink",},
-	{"dark_grey",},
-	{"dark_green",},
-}
-
-for _, row in ipairs(pixelsgive.colors) do
-	local name = row[1]
-		minetest.register_on_newplayer(function(player)
-			player:get_inventory():add_item("main", "pixels:"..name" 10000")
-			player:get_inventory():add_item("main", "pixels:"..name.."_framed 10000")
-		end) 		
-	
+	player:get_inventory():add_item('main', 'pixels: 10000')
+	player:get_inventory():add_item('main', 'pixels: 10000')
+	player:get_inventory():add_item('main', 'pixels: 10000')
+	player:get_inventory():add_item('main', 'pixels: 10000')
+	player:get_inventory():add_item('main', 'pixels: 10000')
+	player:get_inventory():add_item('main', 'pixels: 10000')
+	player:get_inventory():add_item('main', 'pixels: 10000')
+	player:get_inventory():add_item('main', 'pixels: 10000')
+	player:get_inventory():add_item('main', 'pixels: 10000')
+	player:get_inventory():add_item('main', 'pixels: 10000')
+	player:get_inventory():add_item('main', 'pixels: 10000')
+	player:get_inventory():add_item('main', 'pixels: 10000')
 end
 
 minetest.register_item(":", {
