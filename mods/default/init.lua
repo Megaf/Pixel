@@ -33,7 +33,7 @@ minetest.register_on_newplayer(function(player)
 	player:get_inventory():add_item('main', 'pixels:pink_framed 10000')
 	player:get_inventory():add_item('main', 'pixels:dark_grey_framed 10000')
 	player:get_inventory():add_item('main', 'pixels:dark_green_framed 10000')
-end ),
+end )
 
 minetest.register_item(":", {
 	type = "none",
