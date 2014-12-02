@@ -6,8 +6,8 @@ minetest.register_on_newplayer(function(player)
 	player:get_inventory():add_item('main', 'default:dirt_with_grass 10000')
 end) ]]
 
-local pixels = {}
-pixels.colors = {
+local pixels_give = {}
+pixels_give.colors = {
 	{"white",      "White",      nil},
 	{"grey",       "Grey",       "basecolor_grey"},
 	{"black",      "Black",      "basecolor_black"},
@@ -25,7 +25,7 @@ pixels.colors = {
 	{"dark_green", "Dark Green", "unicolor_dark_green"},
 }
 
-for _, row in ipairs(pixels.colors) do
+for _, row in ipairs(pixels_give.colors) do
 	local name = row[1]
 	local desc = row[2]
 		minetest.register_on_newplayer(function(player)
