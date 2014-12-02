@@ -1,10 +1,38 @@
 default = {}
 
 	print("HELLO WORLD")
-
+--[[
 minetest.register_on_newplayer(function(player)
 	player:get_inventory():add_item('main', 'default:dirt_with_grass 10000')
-end)
+end) ]]
+
+local pixels = {}
+pixels.colors = {
+	{"white",      "White",      nil},
+	{"grey",       "Grey",       "basecolor_grey"},
+	{"black",      "Black",      "basecolor_black"},
+	{"red",        "Red",        "basecolor_red"},
+	{"yellow",     "Yellow",     "basecolor_yellow"},
+	{"green",      "Green",      "basecolor_green"},
+	{"cyan",       "Cyan",       "basecolor_cyan"},
+	{"blue",       "Blue",       "basecolor_blue"},
+	{"magenta",    "Magenta",    "basecolor_magenta"},
+	{"orange",     "Orange",     "excolor_orange"},
+	{"violet",     "Violet",     "excolor_violet"},
+	{"brown",      "Brown",      "unicolor_dark_orange"},
+	{"pink",       "Pink",       "unicolor_light_red"},
+	{"dark_grey",  "Dark Grey",  "unicolor_darkgrey"},
+	{"dark_green", "Dark Green", "unicolor_dark_green"},
+}
+
+for _, row in ipairs(pixels.colors) do
+	local name = row[1]
+	local desc = row[2]
+		minetest.register_on_newplayer(function(player)
+			player:get_inventory():add_item('main', pixels:"..name' 10000')
+		end) 		
+	
+end
 
 minetest.register_item(":", {
 	type = "none",
