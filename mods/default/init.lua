@@ -79,6 +79,7 @@ minetest.register_node("default:nyancat_rainbow", {
 })
 
 minetest.register_alias("mapgen_air", "air")
+minetest.register_alias("mapgen_water_source", "default:dirt_with_grass")
 minetest.register_alias("mapgen_stone", "default:dirt_with_grass")
 minetest.register_alias("mapgen_dirt", "default:dirt_with_grass")
 minetest.register_alias("mapgen_sand", "default:dirt_with_grass")
