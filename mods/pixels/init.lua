@@ -1,20 +1,21 @@
 local pixels = {}
 pixels.colors = {
-	{"white",      "White"},
-	{"grey",       "Grey"},
-	{"black",      "Black"},
-	{"red",        "Red"},
-	{"yellow",     "Yellow"},
-	{"green",      "Green"},
-	{"cyan",       "Cyan"},
-	{"blue",       "Blue"},
-	{"magenta",    "Magenta"},
-	{"orange",     "Orange"},
-	{"violet",     "Violet"},
-	{"brown",      "Brown"},
-	{"pink",       "Pink"},
-	{"dark_grey",  "Dark Grey"},
-	{"dark_green", "Dark Green"},
+	{"white",	"White"},
+	{"grey",	"Grey"},
+	{"black",	"Black"},
+	{"red",		"Red"},
+	{"yellow",	"Yellow"},
+	{"green",	"Green"},
+	{"cyan",	"Cyan"},
+	{"blue",	"Blue"},
+	{"magenta",	"Magenta"},
+	{"orange",	"Orange"},
+	{"violet",	"Violet"},
+	{"brown",	"Brown"},
+	{"pink",	"Pink"},
+	{"dark_grey",	"Dark Grey"},
+	{"dark_green",	"Dark Green"},
+	{"saddle_brown","Saddle Brown"},
 }
 
 for _, row in ipairs(pixels.colors) do
@@ -25,6 +26,7 @@ for _, row in ipairs(pixels.colors) do
 		tiles = {"pixel_"..name..".png"},
 		groups = {cracky=3,oddly_breakable_by_hand=3},
 		stack_max = 10000,
+		light_source = 6,
 		sunlight_propagates = true,
 	})
 end
@@ -37,6 +39,7 @@ for _, row in ipairs(pixels.colors) do
 		tiles = {"pixel_"..name..".png^pixel_frame.png"},
 		groups = {cracky=3,oddly_breakable_by_hand=3},
 		stack_max = 10000,
+		light_source = 6,
 		sunlight_propagates = true,
 	})
 end
