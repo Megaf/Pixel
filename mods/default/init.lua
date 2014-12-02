@@ -1,6 +1,6 @@
 default = {}
 
-	print("HELLO WORLD")
+	print("Hello human, how are you today?")
 
 local pixels = {}
 pixels.colors = {
@@ -29,43 +29,6 @@ for _, row in ipairs(pixels.colors) do
 end )
 end
 
-
---[[
-minetest.register_on_newplayer(function(player)
-	player:get_inventory():add_item('main', 'pixels:white 10000')
-	player:get_inventory():add_item('main', 'pixels:grey 10000')
-	player:get_inventory():add_item('main', 'pixels:black 10000')
-	player:get_inventory():add_item('main', 'pixels:red 10000')
-	player:get_inventory():add_item('main', 'pixels:yellow 10000')
-	player:get_inventory():add_item('main', 'pixels:green 10000')
-	player:get_inventory():add_item('main', 'pixels:cyan 10000')
-	player:get_inventory():add_item('main', 'pixels:blue 10000')
-	player:get_inventory():add_item('main', 'pixels:magenta 10000')
-	player:get_inventory():add_item('main', 'pixels:orange 10000')
-	player:get_inventory():add_item('main', 'pixels:violet 10000')
-	player:get_inventory():add_item('main', 'pixels:brown 10000')
-	player:get_inventory():add_item('main', 'pixels:pink 10000')
-	player:get_inventory():add_item('main', 'pixels:dark_grey 10000')
-	player:get_inventory():add_item('main', 'pixels:dark_green 10000')
-	player:get_inventory():add_item('main', 'pixels:white_framed 10000')
-	player:get_inventory():add_item('main', 'pixels:grey_framed 10000')
-	player:get_inventory():add_item('main', 'pixels:black_framed 10000')
-	player:get_inventory():add_item('main', 'pixels:red_framed 10000')
-	player:get_inventory():add_item('main', 'pixels:yellow_framed 10000')
-	player:get_inventory():add_item('main', 'pixels:green_framed 10000')
-	player:get_inventory():add_item('main', 'pixels:cyan_framed 10000')
-	player:get_inventory():add_item('main', 'pixels:blue_framed 10000')
-	player:get_inventory():add_item('main', 'pixels:magenta_framed 10000')
-	player:get_inventory():add_item('main', 'pixels:orange_framed 10000')
-	player:get_inventory():add_item('main', 'pixels:violet_framed 10000')
-	player:get_inventory():add_item('main', 'pixels:brown_framed 10000')
-	player:get_inventory():add_item('main', 'pixels:pink_framed 10000')
-	player:get_inventory():add_item('main', 'pixels:dark_grey_framed 10000')
-	player:get_inventory():add_item('main', 'pixels:dark_green_framed 10000')
-end )
-]]
-
-
 minetest.register_item(":", {
 	type = "none",
 	wield_image = "wieldhand.png",
@@ -74,21 +37,14 @@ minetest.register_item(":", {
 		full_punch_interval = 1.0,
 		max_drop_level = 0,
 		groupcaps = {
-			fleshy = {times={[1]=0.05, [2]=0.05, [3]=0.05}, uses=0, maxlevel=4},
-			crumbly = {times={[1]=0.05, [2]=0.05, [3]=0.05}, uses=0, maxlevel=4},
-			snappy = {times={[1]=0.05, [2]=0.05, [3]=0.05}, uses=0, maxlevel=4},
-			cracky = {times={[1]=0.05, [2]=0.05, [3]=0.05}, uses=0, maxlevel=4},
-			oddly_breakable_by_hand = {times={[1]=0.05,[2]=0.05,[3]=0.05}, uses=0, maxlevel=4},
+			fleshy = {times={[1]=1.00, [2]=1.00, [3]=1.00}, uses=0, maxlevel=4},
+			crumbly = {times={[1]=1.00, [2]=1.00, [3]=1.00}, uses=0, maxlevel=4},
+			snappy = {times={[1]=1.00, [2]=1.00, [3]=1.00}, uses=0, maxlevel=4},
+			cracky = {times={[1]=1.00, [2]=1.00, [3]=1.00}, uses=0, maxlevel=4},
+			oddly_breakable_by_hand = {times={[1]=1.00,[2]=1.00,[3]=1.00}, uses=0, maxlevel=4},
 			}
 		}
 })
-
-minetest.register_node("default:dirt_with_grass", {
-	description = "Dirt with grass",
-	tiles ={"default_grass.png", "default_dirt.png", "default_dirt.png^default_grass_side.png"},
-	groups = {crumbly=3, soil=1},
-	drop = 'default:dirt_with_grass',
-	})
 
 minetest.register_node("default:nyancat", {
 	description = "Nyancat",
@@ -98,26 +54,24 @@ minetest.register_node("default:nyancat", {
 	paramtype2 = "facedir",
 	groups = {cracky=2},
 	legacy_facedir_simple = true,
-	is_ground_content = false,
 })
 
 minetest.register_node("default:nyancat_rainbow", {
 	description = "Nyancat Rainbow",
 	tiles ={"default_nc_rb.png"},
 	inventory_image = "default_nc_rb.png",
-	is_ground_content = false,
 	groups = {cracky=2},
 })
 
 minetest.register_alias("mapgen_air", "air")
-minetest.register_alias("mapgen_water_source", "default:dirt_with_grass")
-minetest.register_alias("mapgen_stone", "default:dirt_with_grass")
-minetest.register_alias("mapgen_dirt", "default:dirt_with_grass")
-minetest.register_alias("mapgen_sand", "default:dirt_with_grass")
-minetest.register_alias("mapgen_cobble", "default:dirt_with_grass")
-minetest.register_alias("mapgen_dirt_with_grass", "default:dirt_with_grass")
-minetest.register_alias("mapgen_stone", "default:dirt_with_grass")
-minetest.register_alias("mapgen_dirt", "default:dirt_with_grass")
+minetest.register_alias("mapgen_water_source", "pixels:dark_grey")
+minetest.register_alias("mapgen_stone", "pixels:dark_grey")
+minetest.register_alias("mapgen_dirt", "pixels:dark_grey")
+minetest.register_alias("mapgen_sand", "pixels:dark_grey")
+minetest.register_alias("mapgen_cobble", "pixels:dark_grey")
+minetest.register_alias("mapgen_dirt_with_grass", "pixels:dark_grey")
+minetest.register_alias("mapgen_stone", "pixels:dark_grey")
+minetest.register_alias("mapgen_dirt", "pixels:dark_grey")
 
 local homes_file = minetest.get_worldpath() .. "/homes"
 local homepos = {}
@@ -181,14 +135,12 @@ minetest.register_chatcommand("sethome", {
 	end,
 })
 
-
---dofile(minetest.get_modpath("default").."/file.lua")
---[[ minetest.register_on_joinplayer(function(player)
+minetest.register_on_joinplayer(function(player)
 	local cb = function(player)
-		minetest.chat_send_player(player:get_player_name(), "Text")
+		minetest.chat_send_player(player:get_player_name(), "Hello sir player. Welcome to this creative game, your objective is make stuff.")
 	end
 	minetest.after(2.0, cb, player)
-end) ]]
+end)
 --minetest.register_privilege("priv", "description")
 
 
