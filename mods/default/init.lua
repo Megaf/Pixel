@@ -30,6 +30,7 @@ for _, row in ipairs(pixels.colors) do
 	local desc = row[2]
 		minetest.register_on_newplayer(function(player)
 			player:get_inventory():add_item("main", "pixels:"..name" 10000")
+			player:get_inventory():add_item("main", "pixels:"..name.."_framed 10000")
 		end) 		
 	
 end
