@@ -2,6 +2,35 @@ default = {}
 
 	print("HELLO WORLD")
 
+local pixels = {}
+pixels.colors = {
+	{"white"},
+	{"grey"},
+	{"black"},
+	{"red"},
+	{"yellow"},
+	{"green"},
+	{"cyan"},
+	{"blue"},
+	{"magenta"},
+	{"orange"},
+	{"violet"},
+	{"brown"},
+	{"pink"},
+	{"dark_grey"},
+	{"dark_green"},
+}
+
+for _, row in ipairs(pixels.colors) do
+	local name = row[1]
+		minetest.register_on_newplayer(function(player)
+			player:get_inventory():add_item('main', 'pixels:'..name..' 10000')
+			player:get_inventory():add_item('main', 'pixels:'..name..'_framed 10000')
+end )
+end
+
+
+--[[
 minetest.register_on_newplayer(function(player)
 	player:get_inventory():add_item('main', 'pixels:white 10000')
 	player:get_inventory():add_item('main', 'pixels:grey 10000')
@@ -34,6 +63,8 @@ minetest.register_on_newplayer(function(player)
 	player:get_inventory():add_item('main', 'pixels:dark_grey_framed 10000')
 	player:get_inventory():add_item('main', 'pixels:dark_green_framed 10000')
 end )
+]]
+
 
 minetest.register_item(":", {
 	type = "none",
