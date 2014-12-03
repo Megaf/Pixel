@@ -16,8 +16,7 @@ pixels.colors = {
 	{"brown"},
 	{"pink"},
 	{"dark_grey"},
-	{"dark_green"},
-}
+	{"dark_green"},}
 for _, row in ipairs(pixels.colors) do
 	local name = row[1]
 		minetest.register_on_newplayer(function(player)
@@ -38,25 +37,7 @@ minetest.register_item(":", {
 			snappy = {times={[1]=1.00, [2]=1.00, [3]=1.00}, uses=0, maxlevel=4},
 			cracky = {times={[1]=1.00, [2]=1.00, [3]=1.00}, uses=0, maxlevel=4},
 			oddly_breakable_by_hand = {times={[1]=1.00,[2]=1.00,[3]=1.00}, uses=0, maxlevel=4},
-		}
-	}
-})
-minetest.register_node("default:nyancat", {
-	description = "Nyancat",
-	tiles ={"default_nc_side.png", "default_nc_side.png", "default_nc_side.png",
-		"default_nc_side.png", "default_nc_back.png", "default_nc_front.png"},
-	inventory_image = "default_nc_front.png",
-	paramtype2 = "facedir",
-	groups = {cracky=2},
-	legacy_facedir_simple = true,
-})
-
-minetest.register_node("default:nyancat_rainbow", {
-	description = "Nyancat Rainbow",
-	tiles ={"default_nc_rb.png"},
-	inventory_image = "default_nc_rb.png",
-	groups = {cracky=2},
-})
+		}}})
 minetest.register_alias("mapgen_air", "air")
 minetest.register_alias("mapgen_water_source", "pixels:dark_grey")
 minetest.register_alias("mapgen_stone", "pixels:dark_grey")
@@ -102,8 +83,7 @@ minetest.register_chatcommand("home", {
 		else
 			minetest.chat_send_player(name, "Type /sethome to save the place where you are, allowing you to teleport back to it later on.")
 		end
-	end,
-})
+	end, })
 minetest.register_chatcommand("sethome", {
 		description = "Type /sethome to save the place where you are, allowing you to teleport back to it later on.",
 		privs = {interact=true},
@@ -121,8 +101,7 @@ minetest.register_chatcommand("sethome", {
 			io.close(output)
 			changed = false
 		end
-	end,
-})
+	end, })
 minetest.register_on_joinplayer(function(player)
 	local cb = function(player)
 		minetest.chat_send_player(player:get_player_name(), "Hello sir player. Welcome to this creative game, your objective is make stuff.")
