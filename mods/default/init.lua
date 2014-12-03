@@ -20,8 +20,8 @@ pixels.colors = {
 for _, row in ipairs(pixels.colors) do
 	local name = row[1]
 		minetest.register_on_newplayer(function(player)
-			player:get_inventory():add_item('main', 'pixels:'..name..' 10000')
-			player:get_inventory():add_item('main', 'pixels:'..name..'_framed 10000')
+			player:get_inventory():add_item('main', 'default:'..name..' 10000')
+			player:get_inventory():add_item('main', 'default:'..name..'_framed 10000')
 end )
 end
 minetest.register_item(":", {
@@ -38,15 +38,37 @@ minetest.register_item(":", {
 			cracky = {times={[1]=1.00, [2]=1.00, [3]=1.00}, uses=0, maxlevel=4},
 			oddly_breakable_by_hand = {times={[1]=1.00,[2]=1.00,[3]=1.00}, uses=0, maxlevel=4},
 		}}})
+for _, row in ipairs(pixels.colors) do
+	local name = row[1]
+	minetest.register_node("default:"..name, {
+		description = name.." Pixel",
+		tiles = {"pixel_"..name..".png"},
+		groups = {cracky=2},
+		stack_max = 10000,
+		light_source = 4,
+		sunlight_propagates = true,
+	})
+end
+for _, row in ipairs(pixels.colors) do
+	local name = row[1]
+	minetest.register_node("default:"..name.."_framed", {
+		description = "Framed (black border)"..name.." Pixel",
+		tiles = {"pixel_"..name..".png^pixel_frame.png"},
+		groups = {cracky=2},
+		stack_max = 10000,
+		light_source = 4,
+		sunlight_propagates = true,
+	})
+end
 minetest.register_alias("mapgen_air", "air")
-minetest.register_alias("mapgen_water_source", "pixels:dark_grey")
-minetest.register_alias("mapgen_stone", "pixels:dark_grey")
-minetest.register_alias("mapgen_dirt", "pixels:dark_grey")
-minetest.register_alias("mapgen_sand", "pixels:dark_grey")
-minetest.register_alias("mapgen_cobble", "pixels:dark_grey")
-minetest.register_alias("mapgen_dirt_with_grass", "pixels:dark_grey")
-minetest.register_alias("mapgen_stone", "pixels:dark_grey")
-minetest.register_alias("mapgen_dirt", "pixels:dark_grey")
+minetest.register_alias("mapgen_water_source", "default:dark_grey")
+minetest.register_alias("mapgen_stone", "default:dark_grey")
+minetest.register_alias("mapgen_dirt", "default:dark_grey")
+minetest.register_alias("mapgen_sand", "default:dark_grey")
+minetest.register_alias("mapgen_cobble", "default:dark_grey")
+minetest.register_alias("mapgen_dirt_with_grass", "default:dark_grey")
+minetest.register_alias("mapgen_stone", "default:dark_grey")
+minetest.register_alias("mapgen_dirt", "default:dark_grey")
 local homes_file = minetest.get_worldpath() .. "/homes"
 local homepos = {}
 local function loadhomes()
