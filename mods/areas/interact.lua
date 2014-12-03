@@ -1,4 +1,3 @@
-
 local old_is_protected = minetest.is_protected
 function minetest.is_protected(pos, name)
 	if not areas:canInteract(pos, name) then
@@ -6,7 +5,6 @@ function minetest.is_protected(pos, name)
 	end
 	return old_is_protected(pos, name)
 end
-
 minetest.register_on_protection_violation(function(pos, name)
 	if not areas:canInteract(pos, name) then
 		local owners = areas:getNodeOwners(pos)
@@ -16,4 +14,3 @@ minetest.register_on_protection_violation(function(pos, name)
 				table.concat(owners, ", ")))
 	end
 end)
-
