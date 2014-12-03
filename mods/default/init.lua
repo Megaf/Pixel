@@ -1,7 +1,5 @@
 default = {}
-
 	print("Hello human, how are you today?")
-
 local pixels = {}
 pixels.colors = {
 	{"white"},
@@ -20,7 +18,6 @@ pixels.colors = {
 	{"dark_grey"},
 	{"dark_green"},
 }
-
 for _, row in ipairs(pixels.colors) do
 	local name = row[1]
 		minetest.register_on_newplayer(function(player)
@@ -28,7 +25,6 @@ for _, row in ipairs(pixels.colors) do
 			player:get_inventory():add_item('main', 'pixels:'..name..'_framed 10000')
 end )
 end
-
 minetest.register_item(":", {
 	type = "none",
 	wield_image = "wieldhand.png",
@@ -42,10 +38,8 @@ minetest.register_item(":", {
 			snappy = {times={[1]=1.00, [2]=1.00, [3]=1.00}, uses=0, maxlevel=4},
 			cracky = {times={[1]=1.00, [2]=1.00, [3]=1.00}, uses=0, maxlevel=4},
 			oddly_breakable_by_hand = {times={[1]=1.00,[2]=1.00,[3]=1.00}, uses=0, maxlevel=4},
-			}
 		}
 })
-
 minetest.register_node("default:nyancat", {
 	description = "Nyancat",
 	tiles ={"default_nc_side.png", "default_nc_side.png", "default_nc_side.png",
@@ -62,7 +56,6 @@ minetest.register_node("default:nyancat_rainbow", {
 	inventory_image = "default_nc_rb.png",
 	groups = {cracky=2},
 })
-
 minetest.register_alias("mapgen_air", "air")
 minetest.register_alias("mapgen_water_source", "pixels:dark_grey")
 minetest.register_alias("mapgen_stone", "pixels:dark_grey")
@@ -72,10 +65,8 @@ minetest.register_alias("mapgen_cobble", "pixels:dark_grey")
 minetest.register_alias("mapgen_dirt_with_grass", "pixels:dark_grey")
 minetest.register_alias("mapgen_stone", "pixels:dark_grey")
 minetest.register_alias("mapgen_dirt", "pixels:dark_grey")
-
 local homes_file = minetest.get_worldpath() .. "/homes"
 local homepos = {}
-
 local function loadhomes()
 	local input = io.open(homes_file, "r")
 	if input then
@@ -94,10 +85,8 @@ local function loadhomes()
 		homepos = {}
 	end
 end
-
 loadhomes()
 local changed = false
-
 minetest.register_chatcommand("home", {
 	description = "Type /home to teleport yourself to your land.",
 	privs = {interact=true},
@@ -114,7 +103,6 @@ minetest.register_chatcommand("home", {
 		end
 	end,
 })
-
 minetest.register_chatcommand("sethome", {
 		description = "Type /sethome to save the place where you are, allowing you to teleport back to it later on.",
 		privs = {interact=true},
@@ -134,13 +122,9 @@ minetest.register_chatcommand("sethome", {
 		end
 	end,
 })
-
 minetest.register_on_joinplayer(function(player)
 	local cb = function(player)
 		minetest.chat_send_player(player:get_player_name(), "Hello sir player. Welcome to this creative game, your objective is make stuff.")
 	end
 	minetest.after(2.0, cb, player)
 end)
---minetest.register_privilege("priv", "description")
-
-

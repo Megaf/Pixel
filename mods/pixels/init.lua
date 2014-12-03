@@ -1,45 +1,41 @@
 local pixels = {}
 pixels.colors = {
-	{"white",	"White"},
-	{"grey",	"Grey"},
-	{"black",	"Black"},
-	{"red",		"Red"},
-	{"yellow",	"Yellow"},
-	{"green",	"Green"},
-	{"cyan",	"Cyan"},
-	{"blue",	"Blue"},
-	{"magenta",	"Magenta"},
-	{"orange",	"Orange"},
-	{"violet",	"Violet"},
-	{"brown",	"Brown"},
-	{"pink",	"Pink"},
-	{"dark_grey",	"Dark Grey"},
-	{"dark_green",	"Dark Green"},
-	{"saddle_brown","Saddle Brown"},
+	{"white"},
+	{"grey"},
+	{"black"},
+	{"red"},
+	{"yellow"},
+	{"green"},
+	{"cyan"},
+	{"blue"},
+	{"magenta"},
+	{"orange"},
+	{"violet"},
+	{"brown"},
+	{"pink"},
+	{"dark_grey"},
+	{"dark_green"},
+	{"saddle_brown"},
 }
-
 for _, row in ipairs(pixels.colors) do
 	local name = row[1]
-	local desc = row[2]
 	minetest.register_node("pixels:"..name, {
-		description = desc.." Pixel",
+		description = name.." Pixel",
 		tiles = {"pixel_"..name..".png"},
-		groups = {cracky=3,oddly_breakable_by_hand=3},
+		groups = {cracky=3},
 		stack_max = 10000,
-		light_source = 6,
+		light_source = 4,
 		sunlight_propagates = true,
 	})
 end
-
 for _, row in ipairs(pixels.colors) do
 	local name = row[1]
-	local desc = row[2]
 	minetest.register_node("pixels:"..name.."_framed", {
-		description = "Framed (black border)"..desc.." Pixel",
+		description = "Framed (black border)"..name.." Pixel",
 		tiles = {"pixel_"..name..".png^pixel_frame.png"},
-		groups = {cracky=3,oddly_breakable_by_hand=3},
+		groups = {cracky=3},
 		stack_max = 10000,
-		light_source = 6,
+		light_source = 4,
 		sunlight_propagates = true,
 	})
 end
