@@ -39,6 +39,7 @@ minetest.register_item(":", {
 			cracky = {times={[1]=1.00, [2]=1.00, [3]=1.00}, uses=0, maxlevel=4},
 			oddly_breakable_by_hand = {times={[1]=1.00,[2]=1.00,[3]=1.00}, uses=0, maxlevel=4},
 		}
+	}
 })
 minetest.register_node("default:nyancat", {
 	description = "Nyancat",
