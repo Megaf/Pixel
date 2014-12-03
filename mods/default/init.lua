@@ -1,5 +1,4 @@
 default = {}
-	print("Hello human, how are you today?")
 local pixels = {}
 pixels.colors = {
 	{"white"},
@@ -33,12 +32,7 @@ minetest.register_item(":", {
 		full_punch_interval = 1.0,
 		max_drop_level = 0,
 		groupcaps = {
-			fleshy = {times={[1]=1.00, [2]=1.00, [3]=1.00}, uses=0, maxlevel=4},
-			crumbly = {times={[1]=1.00, [2]=1.00, [3]=1.00}, uses=0, maxlevel=4},
-			snappy = {times={[1]=1.00, [2]=1.00, [3]=1.00}, uses=0, maxlevel=4},
-			cracky = {times={[1]=1.00, [2]=1.00, [3]=1.00}, uses=0, maxlevel=4},
-			oddly_breakable_by_hand = {times={[1]=1.00,[2]=1.00,[3]=1.00}, uses=0, maxlevel=4},
-		}}})
+			cracky = {times={[1]=1.00, [2]=1.00, [3]=1.00}, uses=0, maxlevel=4},}}})
 for _, row in ipairs(pixels.colors) do
 	local name = row[1]
 	minetest.register_node("default:"..name, {
@@ -125,9 +119,3 @@ minetest.register_chatcommand("sethome", {
 			changed = false
 		end
 	end, })
-minetest.register_on_joinplayer(function(player)
-	local cb = function(player)
-		minetest.chat_send_player(player:get_player_name(), "Hello sir player. Welcome to this creative game, your objective is make stuff.")
-	end
-	minetest.after(2.0, cb, player)
-end)
