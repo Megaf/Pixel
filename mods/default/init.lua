@@ -16,7 +16,8 @@ pixels.colors = {
 	{"brown"},
 	{"pink"},
 	{"dark_grey"},
-	{"dark_green"},}
+	{"dark_green"},
+	{"saddle_brown"},}
 for _, row in ipairs(pixels.colors) do
 	local name = row[1]
 		minetest.register_on_newplayer(function(player)
